@@ -1,14 +1,27 @@
-import { clerkMiddleware } from "@clerk/nextjs/server";
+import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 
-export default clerkMiddleware();
+const isLandingRoute = createRouteMatcher(["/landing"]);
+const isAuthRoute = createRouteMatcher(["/sign-in(.*)", "/sign-up(.*)"]);
+
+export default clerkMiddleware(async (auth, request) => {
+  if (isLandingRoute(request) || isAuthRoute(request)) {
+    return;
+  }
+
+  if (request.nextUrl.pathname === "/") {
+    await auth.protect({
+      unauthenticatedUrl: new URL("/landing", request.url).toString(),
+    });
+    return;
+  }
+
+  await auth.protect({
+    unauthenticatedUrl: new URL("/sign-in", request.url).toString(),
+  });
+});
 
 export const config = {
   matcher: [
-    "/library/:path*",
-    "/book/:path*",
-    "/history/:path*",
-    "/insights/:path*",
-    "/actions/:path*",
-    "/read/:path*",
+    "/((?!_next|.*\\..*).*)",
   ],
 };
