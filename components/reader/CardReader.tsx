@@ -480,17 +480,15 @@ function LessonCardUI({
   setReflections,
   cardIndex,
 }: { card: LessonCard } & CardSwitchProps) {
-  const tabs = [
-    { key: "insights", label: "Insights" },
-    { key: "stories", label: "Stories" },
-    { key: "applications", label: "Apply" },
-  ] as const;
-
   const content = {
     insights: card.insights,
     stories: card.stories,
     applications: card.applications,
   };
+  const contentLinks = [
+    { key: "stories", label: "Want to read stories?" },
+    { key: "applications", label: "Want to read applications?" },
+  ] as const;
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
@@ -526,28 +524,9 @@ function LessonCardUI({
           )}
 
           {/* Tabs */}
-          <div className="flex gap-2 mb-6">
-            {tabs.map((t) => (
-              <button
-                key={t.key}
-                onClick={() => setTab(t.key)}
-                className="flex-1 py-2 rounded-lg text-xs font-semibold tracking-wide transition-all"
-                style={{
-                  fontFamily: "var(--font-mono, monospace)",
-                  background: tab === t.key ? accent : "#ffffff08",
-                  color: tab === t.key ? "#0C0A09" : "#ffffff35",
-                  border: "none",
-                  cursor: "pointer",
-                }}
-              >
-                {t.label}
-              </button>
-            ))}
-          </div>
-
           {/* Tab content — capped at 3 paragraphs */}
           <div className="flex flex-col gap-4">
-            {content[tab].slice(0, 3).map((para, i) => (
+            {content[tab].map((para, i) => (
               <p
                 key={i}
                 className="text-sm leading-relaxed"
@@ -559,6 +538,38 @@ function LessonCardUI({
               >
                 {para}
               </p>
+            ))}
+          </div>
+
+          <div className="mt-8 flex flex-col items-start gap-2">
+            {tab !== "insights" && (
+              <button
+                type="button"
+                onClick={() => setTab("insights")}
+                className="text-xs tracking-wide transition-opacity hover:opacity-70"
+                style={{
+                  color: "#ffffff45",
+                  fontFamily: "var(--font-mono, monospace)",
+                }}
+              >
+                Read insights
+              </button>
+            )}
+            {contentLinks.map((link) => (
+              <button
+                key={link.key}
+                type="button"
+                onClick={() => setTab(link.key)}
+                className="text-xs tracking-wide transition-opacity hover:opacity-70 disabled:opacity-100"
+                disabled={tab === link.key}
+                style={{
+                  color: tab === link.key ? accent : "#ffffff45",
+                  cursor: tab === link.key ? "default" : "pointer",
+                  fontFamily: "var(--font-mono, monospace)",
+                }}
+              >
+                {link.label}
+              </button>
             ))}
           </div>
 

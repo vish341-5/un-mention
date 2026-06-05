@@ -110,7 +110,7 @@ function EntryRow({
 }) {
   return (
     <div
-      className="flex items-center gap-4 p-4 lg:p-5 rounded-2xl transition-colors cursor-pointer hover:opacity-90"
+      className="flex-col items-center gap-4 p-4 lg:p-5 rounded-2xl transition-colors cursor-pointer hover:opacity-90"
       style={{ backgroundColor: "var(--background)", border: "1px solid var(--border)" }}
       onClick={onClick}
     >
@@ -126,22 +126,22 @@ function EntryRow({
         <p className="text-sm font-semibold leading-snug" style={{ color: "var(--foreground)" }}>
           {question}
         </p>
+        <div className="flex items-center gap-2 mt-1">
         <p className="text-xs mt-0.5" style={{ color: "var(--ink-muted)" }}>{bookTitle}</p>
         <p className="text-xs mt-0.5" style={{ color: "var(--ink-muted)" }}>{formatDate(date)}</p>
+        </div>
       </div>
 
-      {/* Divider */}
-      <div className="hidden lg:block w-px h-10 shrink-0" style={{ backgroundColor: "var(--border)" }} />
-
+      
       {/* Right: answer preview */}
       <p
-        className="hidden lg:block flex-1 text-sm leading-relaxed line-clamp-2"
-        style={{ color: "var(--ink-muted)" }}
+        className=" lg:block flex-1 text-sm leading-relaxed line-clamp-2"
+        style={{ color: "var(--foreground)" }}
       >
         {answer}
       </p>
 
-      <ChevronRight size={16} className="shrink-0" style={{ color: "var(--ink-muted)" }} />
+      
     </div>
   );
 }
