@@ -2,11 +2,12 @@ import { getPost } from "@/lib/blog";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
 interface Props {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export default async function BlogPostPage({ params }: Props) {
-  const { frontmatter, content } = getPost(params.slug);
+  const { slug } = await params;
+  const { frontmatter, content } = getPost(slug);
 
   return (
     <div className="max-w-3xl mx-auto px-6 py-20">
