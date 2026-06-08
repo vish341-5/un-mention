@@ -249,7 +249,7 @@ export default function Home() {
                 </div>
 
                 {/* Feature pills */}
-                <div className="flex flex-col gap-3 lg:flex-row lg:flex-wrap lg:gap-4">
+                <div className="flex flex-col gap-3 lg:flex-row lg:flex-wrap lg:gap-4 hidden md:block ">
                   {[
                     { icon: "📖", title: "7-day learning journey", desc: "One day, one law. Focused and actionable." },
                     { icon: "✏️", title: "Reflect & apply", desc: "Answer guided questions and create action plans." },
