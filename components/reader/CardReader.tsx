@@ -1,5 +1,6 @@
 "use client";
 
+import { completeDay } from "@/lib/progress";
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import {
