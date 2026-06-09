@@ -15,9 +15,15 @@ const progressKey = (slug: string) => `unmention-progress-${slug}`;
 
 function getBookProgress(slug: string): number {
   if (typeof window === "undefined") return 0;
-  const stored = window.localStorage.getItem(progressKey(slug));
-  const n = Number(stored);
-  return Number.isFinite(n) && n >= 0 && n <= 100 ? n : 0;
+  try {
+    const stored = window.localStorage.getItem(progressKey(slug));
+    if (!stored) return 0;
+    const completedDays = JSON.parse(stored);
+    if (!Array.isArray(completedDays)) return 0;
+    return Math.round((completedDays.length / 7) * 100);
+  } catch {
+    return 0;
+  }
 }
 
 function ProgressBar({ value }: { value: number }) {
@@ -53,12 +59,18 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
+  function loadProgress() {
     const loaded = books.reduce<Record<string, number>>((acc, book) => {
       acc[book.slug] = getBookProgress(book.slug);
       return acc;
     }, {});
     setProgressBySlug(loaded);
-  }, []);
+  }
+
+  loadProgress();
+  window.addEventListener('focus', loadProgress);
+  return () => window.removeEventListener('focus', loadProgress);
+}, []);
 
   const featured = books.find((b) => b.slug === "48-laws-of-power")!;
 
