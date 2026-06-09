@@ -297,7 +297,7 @@ export default function Home() {
                     className="flex items-center gap-2 rounded-full px-6 py-2.5 text-sm font-medium transition-opacity hover:opacity-90"
                     style={{ backgroundColor: "var(--foreground)", color: "var(--background)" }}
                   >
-                    Start Day 1 →
+                    Start Day 1
                   </Link>
                   <p className="text-xs" style={{ color: "var(--foreground-muted)" }}>
                     🕐 Just 10–15 minutes a day
