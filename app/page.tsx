@@ -365,12 +365,21 @@ export default function Home() {
                           </p>
                           <div className="mt-2 flex items-center justify-between lg:hidden">
                             <div
-                              className="flex items-center gap-1.5 text-xs"
-                              style={{ color: "var(--foreground-muted)" }}
-                            >
-                              <span>🔒</span>
-                              <span>Not started</span>
-                            </div>
+  className="flex items-center gap-1.5 text-xs"
+  style={{ color: "var(--foreground-muted)" }}
+>
+  {progressBySlug[book.slug] > 0 ? (
+    <>
+      <span>📖</span>
+      <span>Day {Math.ceil((progressBySlug[book.slug] / 100) * 7)} of 7</span>
+    </>
+  ) : (
+    <>
+      <span>🔒</span>
+      <span>Not started</span>
+    </>
+  )}
+</div>
                             <span className="text-xs font-medium" style={{ color: "var(--foreground-muted)" }}>
                               {progress}%
                             </span>
@@ -393,12 +402,21 @@ export default function Home() {
                       >
                         <ProgressBar value={progress} />
                         <div
-                          className="flex items-center gap-1.5 text-xs"
-                          style={{ color: "var(--foreground-muted)" }}
-                        >
-                          <span>🔒</span>
-                          <span>Not started</span>
-                        </div>
+  className="flex items-center gap-1.5 text-xs"
+  style={{ color: "var(--foreground-muted)" }}
+>
+  {progressBySlug[book.slug] > 0 ? (
+    <>
+      <span>📖</span>
+      <span>Day {Math.ceil((progressBySlug[book.slug] / 100) * 7)} of 7</span>
+    </>
+  ) : (
+    <>
+      <span>🔒</span>
+      <span>Not started</span>
+    </>
+  )}
+</div>
                       </div>
 
                       <Link
@@ -406,7 +424,7 @@ export default function Home() {
                         className="mt-3 lg:mt-0 block w-full rounded-full py-2.5 text-center text-sm font-medium transition-opacity hover:opacity-90"
                         style={{ backgroundColor: "var(--gold)", color: "var(--background)" }}
                       >
-                        Start Day 1
+                        {progressBySlug[book.slug] > 0 ? "Continue Reading" : "Start Day 1"}
                       </Link>
                     </div>
                   );
