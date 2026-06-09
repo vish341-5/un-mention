@@ -187,6 +187,7 @@ export default function CardReader({ day, book }: CardReaderProps) {
 
   useEffect(() => {
     if (current.type !== "review") return;
+    completeDay(book.slug, day.day);
     setReview((prev) => {
       if (prev && prev.bookSlug === book.slug && prev.dayNum === day.day && prev.title === current.title) {
         return prev;
