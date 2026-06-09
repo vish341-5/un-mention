@@ -227,7 +227,7 @@ export default function Home() {
             {/* ── Hero card ── */}
             <div
               className="mb-6 rounded-3xl p-5 lg:p-8"
-              style={{ backgroundColor: "var(--background)" }}
+              style={{ backgroundColor: "var(--paper)" }}
             >
               <div className="flex flex-col gap-5 lg:gap-6">
                 <div>
@@ -270,7 +270,7 @@ export default function Home() {
                     <div
                       key={title}
                       className="flex items-start gap-3 rounded-2xl p-3 lg:p-4 lg:min-w-[160px] lg:flex-1"
-                      style={{ backgroundColor: "var(--background-secondary)" }}
+                      style={{ backgroundColor: "var(--paper-secondary)" }}
                     >
                       <div
                         className="mt-0.5 grid h-8 w-8 flex-shrink-0 place-items-center rounded-full text-sm"
@@ -340,7 +340,7 @@ export default function Home() {
                       key={book.slug}
                       className="rounded-2xl lg:rounded-3xl p-4 lg:p-5 lg:flex lg:flex-col lg:gap-4"
                       style={{
-                        backgroundColor: "var(--background)",
+                        backgroundColor: "var(--paper)",
                         border: "1px solid var(--border)",
                       }}
                     >
@@ -398,7 +398,7 @@ export default function Home() {
 
                       <div
                         className="hidden lg:block rounded-2xl p-4 space-y-2"
-                        style={{ backgroundColor: "var(--background-secondary)" }}
+                        style={{ backgroundColor: "var(--paper-secondary)" }}
                       >
                         <ProgressBar value={progress} />
                         <div
@@ -435,7 +435,7 @@ export default function Home() {
             {/* ── Bottom CTA ── */}
             <div
               className="mt-6 lg:mt-8 rounded-3xl flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 px-6 lg:px-8 py-6"
-              style={{ backgroundColor: "var(--background)" }}
+              style={{ backgroundColor: "var(--paper)" }}
             >
               <div>
                 <h3
