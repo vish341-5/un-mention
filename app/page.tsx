@@ -249,11 +249,11 @@ export default function Home() {
                     <div>
                       <h2
                         className="text-2xl lg:text-3xl font-semibold leading-tight"
-                        style={{ fontFamily: "var(--font-serif)" }}
+                        style={{ fontFamily: "var(--font-serif)", color: "var(--paper)"}}
                       >
                         {featured.title}
                       </h2>
-                      <p className="mt-2 text-sm" style={{ color: "var(--foreground-muted)" }}>
+                      <p className="mt-2 text-sm" style={{ color: "var(--paper-secondary)" }}>
                         {featured.author}
                       </p>
                     </div>
@@ -270,19 +270,19 @@ export default function Home() {
                     <div
                       key={title}
                       className="flex items-start gap-3 rounded-2xl p-3 lg:p-4 lg:min-w-[160px] lg:flex-1"
-                      style={{ backgroundColor: "var(--paper-secondary)" }}
+                      style={{ backgroundColor: "oklch(0.18 0 0)" }}
                     >
                       <div
                         className="mt-0.5 grid h-8 w-8 flex-shrink-0 place-items-center rounded-full text-sm"
-                        style={{ backgroundColor: "var(--background)" }}
+                        style={{ backgroundColor: "oklch(0.22 0 0)" }}
                       >
                         {icon}
                       </div>
                       <div>
-                        <p className="text-sm font-semibold" style={{ color: "var(--foreground)" }}>
+                        <p className="text-sm font-semibold" style={{ color: "var(--paper)" }}>
                           {title}
                         </p>
-                        <p className="mt-0.5 text-xs leading-relaxed" style={{ color: "var(--foreground-muted)" }}>
+                        <p className="mt-0.5 text-xs leading-relaxed" style={{ color: "var(--paper-secondary)" }}>
                           {desc}
                         </p>
                       </div>
@@ -295,11 +295,11 @@ export default function Home() {
                   <Link
                     href={`/book/${featured.slug}`}
                     className="flex items-center gap-2 rounded-full px-6 py-2.5 text-sm font-medium transition-opacity hover:opacity-90"
-                    style={{ backgroundColor: "var(--foreground)", color: "var(--background)" }}
+                    style={{ backgroundColor: "var(--gold)", color: "var(--ink)" }}
                   >
                     Start Day 1
                   </Link>
-                  <p className="text-xs" style={{ color: "var(--foreground-muted)" }}>
+                  <p className="text-xs" style={{ color: "var(--paper-secondary)" }}>
                     🕐 Just 10–15 minutes a day
                   </p>
                 </div>
