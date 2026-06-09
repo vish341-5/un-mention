@@ -227,7 +227,7 @@ export default function Home() {
             {/* ── Hero card ── */}
             <div
               className="mb-6 rounded-3xl p-5 lg:p-8"
-              style={{ backgroundColor: "var(--paper)" }}
+              style={{ backgroundColor: "var(--ink)" }}
             >
               <div className="flex flex-col gap-5 lg:gap-6">
                 <div>
