@@ -208,6 +208,11 @@ export default function CardReader({ day, book }: CardReaderProps) {
     if (dir === "prev" && currentIndex <= 0) return;
     if (dir === "next" && !canGoNext()) return;
 
+    // Save progress when user reaches ReviewCard
+    if (dir === "next" && current.type === "review") {
+      completeDay(book.slug, day.day);
+    }
+
     setAnimDir(dir);
     setAnimating(true);
     setTimeout(() => {
