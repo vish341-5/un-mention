@@ -207,7 +207,7 @@ export default function Home() {
             </div>
 
             {/* ── Mobile headline ── */}
-            <div className="lg:hidden mb-5">
+            <div className="lg:hidden mb-5 hidden">
               <p
                 className="text-xs uppercase tracking-[0.3em]"
                 style={{ color: "var(--foreground-muted)" }}
