@@ -1,0 +1,1 @@
+﻿import type { Day } from "@/types/book";
