@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
-import { Menu, X, Home as HomeIcon, BookOpen, Lightbulb } from "lucide-react";
+import { Menu, X, Home as HomeIcon, BookOpen, Lightbulb,BookText } from "lucide-react";
 import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
 import { ClerkUserButton } from "@/components/auth/clerk-user-button";
