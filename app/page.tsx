@@ -41,6 +41,8 @@ const NAV_ITEMS = [
   { href: "/", label: "Home", Icon: HomeIcon },
   { href: "/library", label: "Library", Icon: BookOpen },
   { href: "/history", label: "History", Icon: Lightbulb },
+  { href: "/blog", label: "Blog", Icon: BookText},
+
 ];
 
 export default function Home() {
