@@ -6,4 +6,6 @@ export interface BlogPost {
   readTime: string;
   category: "summary" | "guide" | "list";
   book?: string;
+  coverImage?: string;
+  tags?: string[];
 }
