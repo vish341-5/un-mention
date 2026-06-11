@@ -1,7 +1,6 @@
 import { Day } from "@/types/book";
 
 const day4: Day = {
-{
   "day": 4,
   "title": "Crisis Mode",
   "cards": [
