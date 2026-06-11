@@ -1,5 +1,9 @@
-import type { Day } from "@/types/book";
+import { Day } from "@/types/book";
 
-const day7: Day = {};
+const day7: Day = {
+  day: 7,
+  title: "Coming Soon",
+  cards: [],
+};
 
 export default day7;
