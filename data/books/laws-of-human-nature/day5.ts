@@ -1,5 +1,5 @@
 import type { Day } from "@/types/book";
 
-const day6: Day = {};
+const day5: Day = {};
 
-export default day6;
+export default day5;
