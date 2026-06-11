@@ -636,7 +636,7 @@ export default function LandingPage() {
     <>
       {/* NAV */}
       <nav ref={navRef} id="nav">
-        <div className="nav-logo">un<span>mentioned</span></div>
+        <div className="nav-logo">un<span>mention</span></div>
         <div className="nav-actions">
           <a href="/sign-in" className="nav-btn-signin">Sign In</a>
           <a href="/sign-up" className="nav-btn-signup">Sign Up →</a>
