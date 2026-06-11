@@ -766,7 +766,8 @@ function ReviewCardUI({
   card,
   accent,
   allAnswers,
-}: { card: ReviewCard; accent: string } & CardSwitchProps) {
+  actionCards,
+}: { card: ReviewCard; accent: string; actionCards: ActionCard[];} & CardSwitchProps) {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
       <div style={cardBase}>
@@ -782,7 +783,7 @@ function ReviewCardUI({
         </h2>
 
         <div className="flex flex-col gap-4">
-          {card.points.map((point, i) => (
+          {actionCards.map((actionCard, i) => (
             <div
               key={i}
               className="rounded-xl p-5"
@@ -801,7 +802,7 @@ function ReviewCardUI({
                 className="text-sm leading-relaxed mb-3"
                 style={{ color: "#8C7B6A", fontFamily: "var(--font-sans, sans-serif)" }}
               >
-                {point}
+                {actionCard.question}
               </p>
               {allAnswers[i] ? (
                 <p
