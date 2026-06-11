@@ -24,6 +24,23 @@ import zeroDay5 from "./zero-to-one/day5";
 import zeroDay6 from "./zero-to-one/day6";
 import zeroDay7 from "./zero-to-one/day7";
 
+import humanNatureDay1 from "./laws-of-human-nature/day1";
+import humanNatureDay2 from "./laws-of-human-nature/day2";
+import humanNatureDay3 from "./laws-of-human-nature/day3";
+import humanNatureDay4 from "./laws-of-human-nature/day4";
+import humanNatureDay5 from "./laws-of-human-nature/day5";
+import humanNatureDay6 from "./laws-of-human-nature/day6";
+import humanNatureDay7 from "./laws-of-human-nature/day7";
+
+import shoeDay1 from "./shoe-dog/day1";
+import shoeDay2 from "./shoe-dog/day2";
+import shoeDay3 from "./shoe-dog/day3";
+import shoeDay4 from "./shoe-dog/day4";
+import shoeDay5 from "./shoe-dog/day5";
+import shoeDay6 from "./shoe-dog/day6";
+import shoeDay7 from "./shoe-dog/day7";
+
+
 const lawsDays: Day[] = [
   lawsDay1 as Day,
   lawsDay2 as Day,
@@ -53,6 +70,26 @@ const zeroDays: Day[] = [
   zeroDay6 as Day,
   zeroDay7 as Day,
 ];
+
+const humanNatureDays: Day[] = [
+  humanNatureDay1 as Day,
+  humanNatureDay2 as Day,
+  humanNatureDay3 as Day,
+  humanNatureDay4 as Day,
+  humanNatureDay5 as Day,
+  humanNatureDay6 as Day,
+  humanNatureDay7 as Day,
+];
+
+const shoeDays: Day[] = [
+  shoeDay1 as Day,
+  shoeDay2 as Day,
+  shoeDay3 as Day,
+  shoeDay4 as Day,
+  shoeDay5 as Day,
+  shoeDay6 as Day,
+  shoeDay7 as Day,
+]
 
 export const books: Book[] = [
   {
@@ -84,6 +121,26 @@ export const books: Book[] = [
     theme: "blue",
     accentColor: "var(--accent-zero)",
     days: zeroDays,
+  },
+  {
+    slug: "laws-of-human-nature",
+    title: "The Laws of Human Nature",
+    author: "By Robert Greene",
+    description: "Master the hidden forces that drive human behavior and use them to your advantage.",
+    coverImage: "/images/laws-of-human-nature.jpeg",
+    theme: "red",
+    accentColor: "var(--accent-humanNature)",
+    days: humanNatureDays,
+  },
+  {
+    slug: "shoe-dog",
+    title: "Shoe Dog",
+    author: "By Phil Knight",
+    description: "The raw, honest memoir of how Nike was built from nothing into a global empire.",
+    coverImage: "/images/shoe-dog.jpeg",
+    theme: "black",
+    accentColor: "var(--accent-shoe)",
+    days: shoeDays,
   },
 ];
 
